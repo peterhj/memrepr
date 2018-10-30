@@ -1,0 +1,15 @@
+[package]
+name = "memrepr"
+authors = ["Peter Jin <peterhaijin@gmail.com>"]
+version = "0.0.0"
+
+[lib]
+name = "memrepr"
+path = "src/lib.rs"
+
+[features]
+default = []
+f16 = ["float"]
+
+[dependencies]
+float = { version = "*", optional = true }
