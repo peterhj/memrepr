@@ -1,16 +1,13 @@
 [package]
-name = "memrepr"
+name = "podmem"
 authors = ["Peter Jin <peterhaijin@gmail.com>"]
-version = "0.0.0"
+version = "0.1.0-devel"
 edition = "2018"
 
-[lib]
-name = "memrepr"
-path = "src/lib.rs"
-
 [features]
-default = []
+default = ["std"]
 f16 = ["half"]
+std = []
 
 [dependencies]
 #float = { version = "*", optional = true }
