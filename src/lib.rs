@@ -46,6 +46,10 @@ impl ZeroBits for i32 {}
 impl ZeroBits for i64 {}
 impl ZeroBits for isize {}
 
+#[cfg(feature = "cuda")]
+impl ZeroBits for ::cuda::ffi::cuda_fp16::__half {}
+#[cfg(feature = "cuda")]
+impl ZeroBits for ::cuda::ffi::cuda_fp16::__half2 {}
 #[cfg(feature = "f16")]
 impl ZeroBits for f16_stub {}
 impl ZeroBits for f32 {}
