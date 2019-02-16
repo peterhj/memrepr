@@ -11,5 +11,6 @@ std = []
 
 [dependencies]
 #cuda = { path = "../libcuda", optional = true }
-cuda = { git = "https://github.com/peterhj/libcuda", optional = true }
+#cuda = { git = "https://github.com/peterhj/libcuda", optional = true }
+cuda = { version = "~0.4.0-pre.0", optional = true }
 half = { version = "^1.3", optional = true }
