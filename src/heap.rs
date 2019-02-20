@@ -47,13 +47,13 @@ impl<T> HeapPod<T> where T: Copy {
 }
 
 impl<T> HeapPod<T> where T: ZeroBits {
-  pub fn zeros(len: usize) -> Self {
+  pub fn zeroed(len: usize) -> Self {
     let mem = unsafe { HeapPod::<T>::alloc(len) };
     unsafe { write_bytes::<u8>(mem.as_ptr_mut() as *mut u8, 0, mem.region_len() * size_of::<T>()) };
     mem
   }
 
-  pub fn zeros_aligned(len: usize, alignment: usize) -> Self {
+  pub fn zeroed_aligned(len: usize, alignment: usize) -> Self {
     let mem = unsafe { HeapPod::<T>::alloc_aligned(len, alignment) };
     unsafe { write_bytes::<u8>(mem.as_ptr_mut() as *mut u8, 0, mem.region_len() * size_of::<T>()) };
     mem
